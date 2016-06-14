@@ -235,7 +235,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://jasminehua.github.io/2016/01/13/haha/">
+  <link itemprop="mainEntityOfPage" href="https://jasminehua.github.io/2016/06/14/flex实践小结/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="JasmineHua">
@@ -260,8 +260,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/01/13/haha/" itemprop="url">
-                  haha
+                <a class="post-title-link" href="/2016/06/14/flex实践小结/" itemprop="url">
+                  flex布局实践总结
                 </a>
               
             
@@ -277,8 +277,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-01-13T19:46:02+08:00">
-                2016-01-13
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-06-14T12:12:09+08:00">
+                2016-06-14
               </time>
             
 
@@ -300,8 +300,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Testing/" itemprop="url" rel="index">
-                    <span itemprop="name">Testing</span>
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
                   </a>
                 </span>
 
@@ -336,9 +336,21 @@
 
       
         
-          
-            
-          
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前读完阮一峰的 <a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool">Flex 布局教程：语法篇</a> 与 <a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html">Flex 布局教程：实例篇</a> 后以为自己已经对这个布局算是比较理解，后在实践中倒是踩了不少坑。<br>接到的需求涉及到的基本上都是flex的弹性布局。也就是flex-grow，flex-shrink，flex-basis。彻底搞明白这三个属性就可以在一条线上随意排了。</p>
+<h2 id="flex属性"><a href="#flex属性" class="headerlink" title="flex属性"></a>flex属性</h2><p>flex属性可以用来指定可伸缩长度的部件：扩展比率、收缩比率，以及伸缩基准值。当一个元素是伸缩项目时，「flex」属性将代替主轴长度属性决定元素的主轴长度。若元素不是伸缩项目，则「flex」属性没有效果。</p>
+<ul>
+<li>flex-grow 是扩展比率。默认为0，即如果存在剩余空间，也不放大</li>
+<li>flex-shrink 是收缩比率。默认为1，即如果空间不足，该项目将缩小</li>
+<li>flex-basis 伸缩基准值。在分配多余空间之前，项目占据的主轴空间。它的默认值为auto，即项目的本来大小。</li>
+</ul>
+<p>flex 的取值是以上三个属性值的组合。flex 的默认值是 0 1 auto。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/06/14/flex实践小结/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -427,7 +439,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
