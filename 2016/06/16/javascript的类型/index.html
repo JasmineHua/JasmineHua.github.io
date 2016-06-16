@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="flow,layout,css," />
+  <meta name="keywords" content="javascript,原始类型,引用类型," />
 
 
 
@@ -84,25 +84,25 @@
 
 
 
-<meta name="description" content="前言因很早之前看过寒冬前辈的一篇博客谈谈面试与面试题 。于是一直想写篇文章将css布局方面的知识总结一下。
-position的常见取值与行为1.static默认值。静态位置。属于正常文档流。offset属性无作用。
-2.relative相对定位。属于正常文档流。相对于正常流的位置根据offset属性进行偏移（offset值不会影响文档流），所以它原本占据的空间仍存在。
-3.absolute绝对定位">
+<meta name="description" content="前言由于之前的一次面试中被问到js有几种类型，我回答了8种，并回答了哪8种。但很显然看对方的表情就知道这不是她想要的答案。回家在整理的时候知道js的类型分为两类：原始类型(primitive type)和对象类型(object type)。于是写了这篇文章做一个总结。
+JavaScript原始类型和对象类型有哪些
+
+原始类型：Number,Boolean,String,Null,Undefined">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css布局小结">
-<meta property="og:url" content="https://jasminehua.github.io/2016/02/07/css布局/index.html">
+<meta property="og:title" content="javascript的类型及类型理解">
+<meta property="og:url" content="https://jasminehua.github.io/2016/06/16/javascript的类型/index.html">
 <meta property="og:site_name" content="JasmineHua's blog">
-<meta property="og:description" content="前言因很早之前看过寒冬前辈的一篇博客谈谈面试与面试题 。于是一直想写篇文章将css布局方面的知识总结一下。
-position的常见取值与行为1.static默认值。静态位置。属于正常文档流。offset属性无作用。
-2.relative相对定位。属于正常文档流。相对于正常流的位置根据offset属性进行偏移（offset值不会影响文档流），所以它原本占据的空间仍存在。
-3.absolute绝对定位">
-<meta property="og:updated_time" content="2016-06-15T10:47:09.000Z">
+<meta property="og:description" content="前言由于之前的一次面试中被问到js有几种类型，我回答了8种，并回答了哪8种。但很显然看对方的表情就知道这不是她想要的答案。回家在整理的时候知道js的类型分为两类：原始类型(primitive type)和对象类型(object type)。于是写了这篇文章做一个总结。
+JavaScript原始类型和对象类型有哪些
+
+原始类型：Number,Boolean,String,Null,Undefined">
+<meta property="og:updated_time" content="2016-06-16T13:36:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css布局小结">
-<meta name="twitter:description" content="前言因很早之前看过寒冬前辈的一篇博客谈谈面试与面试题 。于是一直想写篇文章将css布局方面的知识总结一下。
-position的常见取值与行为1.static默认值。静态位置。属于正常文档流。offset属性无作用。
-2.relative相对定位。属于正常文档流。相对于正常流的位置根据offset属性进行偏移（offset值不会影响文档流），所以它原本占据的空间仍存在。
-3.absolute绝对定位">
+<meta name="twitter:title" content="javascript的类型及类型理解">
+<meta name="twitter:description" content="前言由于之前的一次面试中被问到js有几种类型，我回答了8种，并回答了哪8种。但很显然看对方的表情就知道这不是她想要的答案。回家在整理的时候知道js的类型分为两类：原始类型(primitive type)和对象类型(object type)。于是写了这篇文章做一个总结。
+JavaScript原始类型和对象类型有哪些
+
+原始类型：Number,Boolean,String,Null,Undefined">
 
 
 
@@ -130,13 +130,13 @@ position的常见取值与行为1.static默认值。静态位置。属于正常�
 
 
 
-  <link rel="canonical" href="https://jasminehua.github.io/2016/02/07/css布局/"/>
+  <link rel="canonical" href="https://jasminehua.github.io/2016/06/16/javascript的类型/"/>
 
 
 
 
 
-  <title> css布局小结 | JasmineHua's blog </title>
+  <title> javascript的类型及类型理解 | JasmineHua's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -243,7 +243,7 @@ position的常见取值与行为1.static默认值。静态位置。属于正常�
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://jasminehua.github.io/2016/02/07/css布局/">
+  <link itemprop="mainEntityOfPage" href="https://jasminehua.github.io/2016/06/16/javascript的类型/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="JasmineHua">
@@ -267,7 +267,7 @@ position的常见取值与行为1.static默认值。静态位置。属于正常�
             
             
               
-                css布局小结
+                javascript的类型及类型理解
               
             
           </h1>
@@ -282,8 +282,8 @@ position的常见取值与行为1.static默认值。静态位置。属于正常�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-02-07T16:38:22+08:00">
-                2016-02-07
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-06-16T21:28:06+08:00">
+                2016-06-16
               </time>
             
 
@@ -305,8 +305,8 @@ position的常见取值与行为1.static默认值。静态位置。属于正常�
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -340,39 +340,18 @@ position的常见取值与行为1.static默认值。静态位置。属于正常�
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>因很早之前看过寒冬前辈的一篇博客<a href="http://www.cnblogs.com/winter-cn/archive/2013/05/11/3072926.html" target="_blank" rel="external">谈谈面试与面试题</a> 。于是一直想写篇文章将css布局方面的知识总结一下。</p>
-<h2 id="position的常见取值与行为"><a href="#position的常见取值与行为" class="headerlink" title="position的常见取值与行为"></a>position的常见取值与行为</h2><h3 id="1-static"><a href="#1-static" class="headerlink" title="1.static"></a>1.static</h3><p>默认值。静态位置。属于正常文档流。offset属性无作用。</p>
-<h3 id="2-relative"><a href="#2-relative" class="headerlink" title="2.relative"></a>2.relative</h3><p>相对定位。属于正常文档流。相对于正常流的位置根据offset属性进行偏移（offset值不会影响文档流），所以它原本占据的空间仍存在。</p>
-<h3 id="3-absolute"><a href="#3-absolute" class="headerlink" title="3.absolute"></a>3.absolute</h3><p>绝对定位。脱离文档流。以第一个position属性值不为static的父类为参考点，若不存在此父类，则以body为参考点，根据offset属性进行偏移（即该元素的containing block）。</p>
-<h3 id="4-fixed"><a href="#4-fixed" class="headerlink" title="4.fixed"></a>4.fixed</h3><p>固定定位。脱离文档流。以浏览器窗口为定位原点根据offset属性进行偏移。<br><a id="more"></a></p>
-<h2 id="normal-flow-正常流"><a href="#normal-flow-正常流" class="headerlink" title="normal flow(正常流)"></a>normal flow(正常流)</h2><p>正常流是默认的定位方式。任何没有具体指定{position:absolute}或者{position:fixed}属性以及没有被浮动的元素都将默认获得此属性。</p>
-<h2 id="containing-block-包含块"><a href="#containing-block-包含块" class="headerlink" title="containing block(包含块)"></a>containing block(包含块)</h2><p>包含块是视觉格式化模型的一个重要概念，它与框模型类似，也可以理解为一个矩形，而这个矩形的作用是为它里面包含的元素提供一个参考，元素的尺寸和位置的计算往往是由该元素所在的包含块决定的。<br>一个元素盒子的位置和大小有时是通过相对于一个特定的长方形来计算的，这个长方形就被称之为元素的 containing block。</p>
-<p>一个元素的 containing block 按以下方式定义：</p>
-<blockquote>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>由于之前的一次面试中被问到js有几种类型，我回答了8种，并回答了哪8种。但很显然看对方的表情就知道这不是她想要的答案。回家在整理的时候知道js的类型分为两类：原始类型(primitive type)和对象类型(object type)。于是写了这篇文章做一个总结。</p>
+<h2 id="JavaScript原始类型和对象类型有哪些"><a href="#JavaScript原始类型和对象类型有哪些" class="headerlink" title="JavaScript原始类型和对象类型有哪些"></a>JavaScript原始类型和对象类型有哪些</h2><blockquote>
 <ol>
-<li>用户代理（比如浏览器）选择 <strong>根元素</strong> 作为 containing block（称之为初始 containing block）。</li>
-<li>对于除绝对定位的元素，containing block由最近的 <strong>块级祖先</strong> 元素盒子的内容边界组成。</li>
-<li>如果元素有属性‘position:fixed’，containing block 由 <strong>视口</strong> 建立。</li>
-<li>如果元素有属性‘position:absolute’，containing block 由最近的 <strong>position不是static的祖先</strong> 建立，按下面的步骤：<br>4.1 如果祖先是块级元素，containing block 由祖先的 padding edge 形成。<br>4.2 如果祖先是内联元素，containing block 取决于祖先的 direction 属性。<br>4.2.1 如果 direction 是 ltr（左到右），祖先产生的第一个盒子的上、左内容边界是 containing block的上方和左方，祖先的最后一个盒子的下、右内容边界是 containing block 的下方和右方。<br>4.2.2如果 direction 是 rtl（右到左），祖先产生的第一个盒子的上、右内容边界是 containing block的上方和右方，祖先的最后一个盒子的下、左内容边界是 containing block 的下方和左方。如果没有祖先，根元素盒子的内容边界确定为 containing block。</li>
+<li>原始类型：Number,Boolean,String,Null,Undefined</li>
+<li>对象类型：Object,Array,Function</li>
 </ol>
 </blockquote>
-<h2 id="margin-collapse-外边距叠加"><a href="#margin-collapse-外边距叠加" class="headerlink" title="margin collapse(外边距叠加)"></a>margin collapse(外边距叠加)</h2><p>margin collapse发生的条件有，处于normal flow，块元素间的垂直margin。</p>
-<p>下面是margin collapse的几种情况：</p>
-<blockquote>
-<ol>
-<li>一个常规文档流元素的margin-bottom与它下一个常规文档流的兄弟元素的margin-top会产生折叠，除非它们之间存在间隙（clearance）。</li>
-<li>一个常规文档流元素的margin-top与其第一个常规文档流的子元素的margin-top产生折叠，条件为父元素不包含 padding 和 border ，子元素不包含 clearance。</li>
-<li>一个不包含border-top、border-bottom、padding-top、padding-bottom的常规文档流元素，并且其 ‘height’ 为 0 或 ‘auto’， ‘min-height’ 为 ‘0’，其里面也不包含行盒(line box)，其自身的 margin-top 和 margin-bottom 会折叠。</li>
-</ol>
-</blockquote>
-<h2 id="Block-formatting-contexts-块级格式化上下文"><a href="#Block-formatting-contexts-块级格式化上下文" class="headerlink" title="Block formatting contexts(块级格式化上下文)"></a>Block formatting contexts(块级格式化上下文)</h2><h3 id="W3C定义"><a href="#W3C定义" class="headerlink" title="W3C定义"></a>W3C定义</h3><p>浮动元素，绝对定位元素，非块级盒子的块级容器（例如 inline-blocks, table-cells, 和 table-captions），以及overflow:visible以外的块级元素（除非该值已经扩散到了视口），都会为他们的内容创建新的BFC（块级格式上下文）。<br>在BFC中，盒子从顶端开始垂直地一个接一个地排列，两个盒子之间的垂直的间隙是由他们的margin值所决定的。在一个BFC中，两个相邻的块级盒子的垂直外边距会产生折叠。<br>在BFC中，每一个盒子的左外边缘会触碰到容器的左边缘（对于从右到左的格式来说，则触碰到右边缘）。即使在浮动的情况下也是成立的（虽然浮动可能导致盒子的线框收缩），除非建立一个新的BFC（在这种情况下，盒子本身可能由于浮动变窄）</p>
-<h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><blockquote>
-<ol>
-<li>可以阻止元素被浮动元素覆盖</li>
-<li>可以包含浮动元素。</li>
-<li>可以消除不同的BFC产生的margin collapse。</li>
-</ol>
-</blockquote>
+<a id="more"></a>
+<h2 id="不可变的原始值和可变的对象引用"><a href="#不可变的原始值和可变的对象引用" class="headerlink" title="不可变的原始值和可变的对象引用"></a>不可变的原始值和可变的对象引用</h2><h3 id="原始值"><a href="#原始值" class="headerlink" title="原始值"></a>原始值</h3><p>原始值都是不可更改的：任何方法都无法更改一个原始值。对于数字，布尔值，Null和Undefined来说很显然在被创建出来后是不可改变的，变量只能通过更改指向别的内存空间来改变变量的值。而对于字符串来说就不是那么明显了，因为字符串看起来和数组有很多共通点，我们会认为字符串可以像数组一样通过制定的索引来修改其中的字符。事实上，javascript是禁止这样做的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> s = <span class="string">'hello'</span>;   <span class="comment">//定义一个字符串</span></div><div class="line">s[<span class="number">0</span>] = <span class="number">1</span>;          <span class="comment">//=&gt; 1:为某个索引赋值</span></div><div class="line">s                  <span class="comment">//=&gt; "hello":原始字符串并未改变</span></div></pre></td></tr></table></figure></p>
+<p>对于原始值的比较。只要两个原始值相同即相等，如果两个字符串比较，但且仅当他们的长度相等且每个索引字符都相等时，它们才相等。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> s1 ＝ <span class="string">'123'</span>;   <span class="comment">//定义一个字符串s1</span></div><div class="line"><span class="keyword">var</span> s2 ＝ <span class="string">'123'</span>;   <span class="comment">//定义一个值与s1都相同的字符串</span></div><div class="line">s1 === s2          <span class="comment">//=&gt; true：两字符串相等</span></div></pre></td></tr></table></figure></p>
+<h3 id="对象引用"><a href="#对象引用" class="headerlink" title="对象引用"></a>对象引用</h3><p>对象类型和原始类型不同，首先它们是可变的，它们的值是可修改的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> o = &#123; <span class="attr">x</span>:<span class="number">1</span> &#125;;   <span class="comment">//定义一个对象</span></div><div class="line">o.x = <span class="number">2</span>;           <span class="comment">//通过修改对象属性值来更改对象</span></div><div class="line">o                  <span class="comment">//=&gt; Object &#123;x: 2&#125;</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];   <span class="comment">//定义一个数组</span></div><div class="line">a[<span class="number">0</span>] = <span class="number">2</span>;          <span class="comment">//通过更改数组的元素来更改数组</span></div><div class="line">a                  <span class="comment">//=&gt; [2, 2, 3]</span></div></pre></td></tr></table></figure></p>
+<p>对象类型的比较与值类型不同，即使两个对象包含同样属性及相同的值，它们也不相等。对象的比较均是引用的比较，当且仅当它们引用同一个基对象时，它们才相等。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> o1 = &#123; <span class="attr">x</span>:<span class="number">1</span> &#125;;   <span class="comment">//定义一个对象</span></div><div class="line"><span class="keyword">var</span> o2 = &#123; <span class="attr">x</span>:<span class="number">1</span> &#125;;   <span class="comment">//定义一个属性及值与s1都相同的对象</span></div><div class="line">o1 == o2            <span class="comment">//=&gt; false：两个对象不相等</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> a1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];   <span class="comment">//定义一个数组</span></div><div class="line"><span class="keyword">var</span> a2 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];   <span class="comment">//定义一个索引元素与s1都相同的数组</span></div><div class="line">a1 == a2            <span class="comment">//=&gt; false：两个数组不相等</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> a1 = [];   <span class="comment">//定义一个空数组</span></div><div class="line"><span class="keyword">var</span> a2 = a1;   <span class="comment">//变量a2引用同一个数组</span></div><div class="line">a2[<span class="number">0</span>] = <span class="number">1</span>      <span class="comment">//=&gt; 通过变量a2来修改引用数组</span></div><div class="line">a1 === a2      <span class="comment">//=&gt; true：a1和a2引用同一个数组，所以两者相等</span></div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -396,11 +375,11 @@ position的常见取值与行为1.static默认值。静态位置。属于正常�
       
         <div class="post-tags">
           
-            <a href="/tags/flow/" rel="tag"># flow</a>
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
           
-            <a href="/tags/layout/" rel="tag"># layout</a>
+            <a href="/tags/原始类型/" rel="tag"># 原始类型</a>
           
-            <a href="/tags/css/" rel="tag"># css</a>
+            <a href="/tags/引用类型/" rel="tag"># 引用类型</a>
           
         </div>
       
@@ -409,15 +388,15 @@ position的常见取值与行为1.static默认值。静态位置。属于正常�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/06/14/flex实践小结/" rel="next" title="flex布局实践总结">
+                <i class="fa fa-chevron-left"></i> flex布局实践总结
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/14/flex实践小结/" rel="prev" title="flex布局实践总结">
-                flex布局实践总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -569,7 +548,7 @@ position的常见取值与行为1.static默认值。静态位置。属于正常�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#position的常见取值与行为"><span class="nav-number">2.</span> <span class="nav-text">position的常见取值与行为</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-static"><span class="nav-number">2.1.</span> <span class="nav-text">1.static</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-relative"><span class="nav-number">2.2.</span> <span class="nav-text">2.relative</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-absolute"><span class="nav-number">2.3.</span> <span class="nav-text">3.absolute</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-fixed"><span class="nav-number">2.4.</span> <span class="nav-text">4.fixed</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#normal-flow-正常流"><span class="nav-number">3.</span> <span class="nav-text">normal flow(正常流)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#containing-block-包含块"><span class="nav-number">4.</span> <span class="nav-text">containing block(包含块)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#margin-collapse-外边距叠加"><span class="nav-number">5.</span> <span class="nav-text">margin collapse(外边距叠加)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Block-formatting-contexts-块级格式化上下文"><span class="nav-number">6.</span> <span class="nav-text">Block formatting contexts(块级格式化上下文)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#W3C定义"><span class="nav-number">6.1.</span> <span class="nav-text">W3C定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用"><span class="nav-number">6.2.</span> <span class="nav-text">作用</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript原始类型和对象类型有哪些"><span class="nav-number">2.</span> <span class="nav-text">JavaScript原始类型和对象类型有哪些</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不可变的原始值和可变的对象引用"><span class="nav-number">3.</span> <span class="nav-text">不可变的原始值和可变的对象引用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原始值"><span class="nav-number">3.1.</span> <span class="nav-text">原始值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象引用"><span class="nav-number">3.2.</span> <span class="nav-text">对象引用</span></a></li></ol></li></ol></div>
             
 
           </div>
