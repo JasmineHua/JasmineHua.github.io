@@ -96,7 +96,7 @@ JavaScript原始类型和对象类型有哪些
 JavaScript原始类型和对象类型有哪些
 
 原始类型：Number,Boolean,String,Null,Undefined">
-<meta property="og:updated_time" content="2016-06-16T13:36:16.000Z">
+<meta property="og:updated_time" content="2016-06-20T11:14:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript的类型及类型理解">
 <meta name="twitter:description" content="前言由于之前的一次面试中被问到js有几种类型，我回答了8种，并回答了哪8种。但很显然看对方的表情就知道这不是她想要的答案。回家在整理的时候知道js的类型分为两类：原始类型(primitive type)和对象类型(object type)。于是写了这篇文章做一个总结。
@@ -347,9 +347,9 @@ JavaScript原始类型和对象类型有哪些
 <li>对象类型：Object,Array,Function</li>
 </ol>
 </blockquote>
-<a id="more"></a>
 <h2 id="不可变的原始值和可变的对象引用"><a href="#不可变的原始值和可变的对象引用" class="headerlink" title="不可变的原始值和可变的对象引用"></a>不可变的原始值和可变的对象引用</h2><h3 id="原始值"><a href="#原始值" class="headerlink" title="原始值"></a>原始值</h3><p>原始值都是不可更改的：任何方法都无法更改一个原始值。对于数字，布尔值，Null和Undefined来说很显然在被创建出来后是不可改变的，变量只能通过更改指向别的内存空间来改变变量的值。而对于字符串来说就不是那么明显了，因为字符串看起来和数组有很多共通点，我们会认为字符串可以像数组一样通过制定的索引来修改其中的字符。事实上，javascript是禁止这样做的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> s = <span class="string">'hello'</span>;   <span class="comment">//定义一个字符串</span></div><div class="line">s[<span class="number">0</span>] = <span class="number">1</span>;          <span class="comment">//=&gt; 1:为某个索引赋值</span></div><div class="line">s                  <span class="comment">//=&gt; "hello":原始字符串并未改变</span></div></pre></td></tr></table></figure></p>
-<p>对于原始值的比较。只要两个原始值相同即相等，如果两个字符串比较，但且仅当他们的长度相等且每个索引字符都相等时，它们才相等。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> s1 ＝ <span class="string">'123'</span>;   <span class="comment">//定义一个字符串s1</span></div><div class="line"><span class="keyword">var</span> s2 ＝ <span class="string">'123'</span>;   <span class="comment">//定义一个值与s1都相同的字符串</span></div><div class="line">s1 === s2          <span class="comment">//=&gt; true：两字符串相等</span></div></pre></td></tr></table></figure></p>
+<p>对于原始值的比较。只要两个原始值相同即相等，如果两个字符串比较，当且仅当他们的长度相等且每个索引字符都相等时，它们相等。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> s1 ＝ <span class="string">'123'</span>;   <span class="comment">//定义一个字符串s1</span></div><div class="line"><span class="keyword">var</span> s2 ＝ <span class="string">'123'</span>;   <span class="comment">//定义一个值与s1都相同的字符串</span></div><div class="line">s1 === s2          <span class="comment">//=&gt; true：两字符串相等</span></div></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <h3 id="对象引用"><a href="#对象引用" class="headerlink" title="对象引用"></a>对象引用</h3><p>对象类型和原始类型不同，首先它们是可变的，它们的值是可修改的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> o = &#123; <span class="attr">x</span>:<span class="number">1</span> &#125;;   <span class="comment">//定义一个对象</span></div><div class="line">o.x = <span class="number">2</span>;           <span class="comment">//通过修改对象属性值来更改对象</span></div><div class="line">o                  <span class="comment">//=&gt; Object &#123;x: 2&#125;</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];   <span class="comment">//定义一个数组</span></div><div class="line">a[<span class="number">0</span>] = <span class="number">2</span>;          <span class="comment">//通过更改数组的元素来更改数组</span></div><div class="line">a                  <span class="comment">//=&gt; [2, 2, 3]</span></div></pre></td></tr></table></figure></p>
 <p>对象类型的比较与值类型不同，即使两个对象包含同样属性及相同的值，它们也不相等。对象的比较均是引用的比较，当且仅当它们引用同一个基对象时，它们才相等。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> o1 = &#123; <span class="attr">x</span>:<span class="number">1</span> &#125;;   <span class="comment">//定义一个对象</span></div><div class="line"><span class="keyword">var</span> o2 = &#123; <span class="attr">x</span>:<span class="number">1</span> &#125;;   <span class="comment">//定义一个属性及值与s1都相同的对象</span></div><div class="line">o1 == o2            <span class="comment">//=&gt; false：两个对象不相等</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> a1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];   <span class="comment">//定义一个数组</span></div><div class="line"><span class="keyword">var</span> a2 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];   <span class="comment">//定义一个索引元素与s1都相同的数组</span></div><div class="line">a1 == a2            <span class="comment">//=&gt; false：两个数组不相等</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> a1 = [];   <span class="comment">//定义一个空数组</span></div><div class="line"><span class="keyword">var</span> a2 = a1;   <span class="comment">//变量a2引用同一个数组</span></div><div class="line">a2[<span class="number">0</span>] = <span class="number">1</span>      <span class="comment">//=&gt; 通过变量a2来修改引用数组</span></div><div class="line">a1 === a2      <span class="comment">//=&gt; true：a1和a2引用同一个数组，所以两者相等</span></div></pre></td></tr></table></figure></p>
 
@@ -397,6 +397,10 @@ JavaScript原始类型和对象类型有哪些
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/20/call，apply，bind/" rel="prev" title="javascript中call，apply，bind的使用方法">
+                javascript中call，apply，bind的使用方法 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -466,7 +470,7 @@ JavaScript原始类型和对象类型有哪些
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -484,7 +488,7 @@ JavaScript原始类型和对象类型有哪些
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
